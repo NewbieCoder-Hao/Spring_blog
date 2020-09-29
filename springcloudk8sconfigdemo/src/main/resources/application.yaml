@@ -1,0 +1,28 @@
+
+spring:
+  application:
+    name: springcloudk8sconfigdemo
+  profiles:
+    active: development
+  cloud:
+    kubernetes:
+      reload:
+        #自动更新配置的开关设置为打开
+        enabled: true
+        #更新配置信息的模式是主动拉取
+        mode: polling
+        #主动拉取的间隔时间是500毫秒
+        period: 500
+      config:
+        sources:
+          - name: ${spring.application.name}
+            namespace: default
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true

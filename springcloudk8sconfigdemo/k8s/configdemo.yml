@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springcloudk8sconfigdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springcloudk8sconfigdemo
+  template:
+    metadata:
+      labels:
+        app: springcloudk8sconfigdemo
+    spec:
+      containers:
+      - image: zhaodockerhub/springcloudk8sconfigdemo:v0.3
+        imagePullPolicy: Always
+        name: springcloudk8sconfigdemo
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "300Mi"
+          requests:
+            memory: "300Mi"
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: springcloudk8sconfigdemo
+  labels:
+    app: springcloudk8sconfigdemo
+spec:
+  selector:
+    app: springcloudk8sconfigdemo
+  ports:
+  - protocol: TCP
+    port: 8080
+    name: http
