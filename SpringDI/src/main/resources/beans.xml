@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.zhao.pojo.Address">
+        <property name="address" value="Nanjing"/>
+    </bean>
+
+    <!-- Set 方法注入, 实体类必须要有 setter 方法 -->
+    <bean id="student" class="com.zhao.pojo.Student">
+        <!-- 值注入 -->
+        <property name="name" value="XiaoMing"/>
+        <!-- 引用注入 -->
+        <property name="address" ref="address"/>
+        <!-- 数组注入 -->
+        <property name="books">
+            <array>
+                <value>xiyouji</value>
+                <value>shuihuzhuan</value>
+                <value>sanguoyanyi</value>
+                <value>hongloumeng</value>
+            </array>
+        </property>
+        <!-- List 注入 -->
+        <property name="hobbies">
+            <list>
+                <value>dance</value>
+                <value>sing</value>
+                <value>run</value>
+            </list>
+        </property>
+        <!-- Map 注入 -->
+        <property name="card">
+            <map>
+                <entry key="youzheng" value="123456"/>
+                <entry key="jianshe" value="234567"/>
+            </map>
+        </property>
+        <!-- Set 注入 -->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>BOB</value>
+                <value>COC</value>
+            </set>
+        </property>
+        <!-- Null 注入 -->
+        <property name="wife">
+            <null/>
+        </property>
+        <!-- Properties 注入 -->
+        <property name="info">
+            <props>
+                <prop key="Id">20190604</prop>
+                <prop key="Gender">male</prop>
+                <prop key="Name">XiaoMing</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- p(properties) 命名空间, 属性要设置 set 方法 -->
+    <!-- bean 实例通过默认构造函数创建，属性通过 p 命名空间注入 -->
+    <!--<bean id="user" class="com.zhao.pojo.User" p:name="p_XiaoMing" p:age="18"/>-->
+
+    <!-- c(Constructor) 命名空间, 属性要设置有参构造方法 -->
+    <!-- bean 实例通过有参构造函数创建 -->
+    <bean id="user" class="com.zhao.pojo.User" c:name="c_XiaoMing" c:age="19"/>
+
+</beans>

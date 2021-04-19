@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean 就是 Java 对象, 由 Spring 创建和管理 -->
+    <bean id="user" class="com.zhao.pojo.User" name="userNoArgs">
+        <property name="name" value="Spring"/>
+    </bean>
+
+    <!-- 上面是通过默认无参构造函数创建 bean, 下面通过有参构造创建 -->
+    <bean id="userArgs" class="com.zhao.pojo.UserArgs">
+        <!-- 方式一: 根据参数下标 -->
+        <!--<constructor-arg index="0" value="index_Spring"/>-->
+        <!-- 方式二: 根据参数名字 -->
+        <!--<constructor-arg name="name" value="name_Spring"/>-->
+        <!-- 方式三: 根据参数类型 -->
+        <constructor-arg type="java.lang.String" value="type_Spring"/>
+    </bean>
+
+    <!-- 取别名 -->
+    <!--<alias name="user" alias="userNoArgs"/>-->
+
+</beans>
