@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 用类型别名来减少类完全限定名的冗余 -->
+    <typeAliases>
+        <typeAlias type="com.zhao.pojo.User" alias="User"/>
+    </typeAliases>
+
+    <!-- 绑定注册 com.zhao.mapper.xml 文件 -->
+    <mappers>
+        <mapper class="com.zhao.mapper.UserMapper"/>
+    </mappers>
+
+</configuration>

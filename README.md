@@ -2,7 +2,7 @@
 
 ## HelloSpring
 
-spring ioc
+Spring IOC
 
 ## SpringDI
 
@@ -22,4 +22,12 @@ spring ioc
 
 ## SpringAOP
 
+Spring AOP
+
 ## SpringWithMybatis
+
+整合Mybatis
+
+## SpringTracsaction
+
+声明式事务

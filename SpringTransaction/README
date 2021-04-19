@@ -1,0 +1,67 @@
+1. 新建 Maven 项目，导入相关 jar 包
+2. 创建实体类
+3. 编写 Spring 配置文件，创建 Bean 实例
+4. Junit 测试
+5. 创建有参构造实体类
+6. 编写 Spring 配置文件，用有参构造函数创建 Bean 实例
+7. Junit 测试
+8. 使用 alias 或 name 标签给 bean 取别名
+
+------
+
+依赖注入：
+- 构造器方法注入
+- Set 方法注入
+- p 命名空间和 c 命名空间
+
+------
+
+自动注入依赖：
+- byName: 保证名字与 set 方法对应
+- byType: 保证同类型的实例唯一
+- @Autowired 和 @Resource
+
+------
+
+注解实现自动注册 bean 实例：
+- @Component
+- @Value
+
+------
+
+静态代理
+
+------
+
+动态代理
+- InvocationHandler 的 invoke 方法：执行代理实例的方法调用，并返回结果
+- Proxy.newProxyInstance 方法：创建动态代理类
+
+实现一个动态代理类模板，方便以后直接使用
+
+------
+
+AOP:
+- Spring API: 实现 Advice 接口，在配置文件中注册 bean 并配置 AOP 切入点
+- 自定义类: 配置文件中注册 bean 并配置 AOP 切入点
+- 注解: 编写注解实现的增强类，在配置文件中注册 bean 并增加支持注解的配置
+
+------
+
+Spring 整合 Mybatis：
+1. 构建 Mybatis 项目
+2. Spring 配置文件中注册 dataSource bean 实例，替换 Mybatis 的数据源
+3. Spring 配置文件中注册 sqlSessionFactory，绑定 Mybatis 的配置文件
+4. Spring 配置文件中注册 sqlSession bean 实例
+5. 新建 MapperImpl 类，私有化 SqlSession，利用 SqlSession.getMapper 调用 Mapper 接口的方法
+6. Junit 测试
+
+SqlSessionSupport
+
+------
+
+1. Spring 配置文件中导入约束头文件
+2. 注册事务管理器 bean 实例，注入 dataSource 属性
+3. 配置事务通知，配置事务的传播特性
+4. 导入 AOP 头文件约束，配置 AOP 织入事务
+5. Junit 测试
