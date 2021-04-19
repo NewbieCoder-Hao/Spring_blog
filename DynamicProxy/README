@@ -1,0 +1,42 @@
+1. 新建 Maven 项目，导入相关 jar 包
+2. 创建实体类
+3. 编写 Spring 配置文件，创建 Bean 实例
+4. Junit 测试
+5. 创建有参构造实体类
+6. 编写 Spring 配置文件，用有参构造函数创建 Bean 实例
+7. Junit 测试
+8. 使用 alias 或 name 标签给 bean 取别名
+
+------
+
+依赖注入：
+- 构造器方法注入
+- Set 方法注入
+- p 命名空间和 c 命名空间
+
+------
+
+自动注入依赖：
+- byName: 保证名字与 set 方法对应
+- byType: 保证同类型的实例唯一
+- @Autowired 和 @Resource
+
+------
+
+注解实现自动注册 bean 实例：
+- @Component
+- @Value
+
+------
+
+静态代理
+
+------
+
+动态代理
+- InvocationHandler 的 invoke 方法：执行代理实例的方法调用，并返回结果
+- Proxy.newProxyInstance 方法：创建动态代理类
+
+实现一个动态代理类模板，方便以后直接使用
+
+
