@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="dog" class="com.zhao.pojo.Dog"/>
+    <bean id="cat" class="com.zhao.pojo.Cat"/>
+
+    <!-- 方式一：最基本的注入方法 -->
+    <!--
+    <bean id="user" class="com.zhao.pojo.User">
+        <property name="cat" ref="cat"/>
+        <property name="dog" ref="dog"/>
+        <property name="name" value="XiaoMing"/>
+    </bean>
+    -->
+
+    <!-- 方式二：byName 和 byType -->
+    <!--
+    <bean id="user" class="com.zhao.pojo.User" autowire="byType">
+        <property name="name" value="XiaoMing"/>
+    </bean>
+    -->
+
+    <!-- 方式三：注解支持 -->
+    <context:annotation-config/>
+    <bean id="user" class="com.zhao.pojo.User">
+        <property name="name" value="XiaoMing"/>
+    </bean>
+
+</beans>
